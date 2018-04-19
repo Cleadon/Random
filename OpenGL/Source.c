@@ -75,8 +75,8 @@ void display(void)
 	glTranslatef(0, 0, 0);
 	glScalef(4, 2, 3);
 	drawDECube();
-	
-	
+
+
 	//head
 	glPushMatrix();
 	glTranslatef(0, 1.5, 0);
@@ -87,14 +87,18 @@ void display(void)
 	//otherhead
 	glPushMatrix();
 	glTranslatef(1, 1.5, 0);
-	glScalef(0.2, 1, 1);
+	glScalef(0.2, 1, 0.2);
 	drawDECube();
 	glPopMatrix();
 
+	//otherotherhead
+	glPushMatrix();
+	glTranslatef(1, 1.5, 0);
+	glScalef(0.2, 1, 0.2);
+	drawDECube();
+	glPopMatrix();
 
-	glPopMatrix(); /// main pop
-
-	glColor3f(1, 1, 1);
+glColor3f(1, 1, 1);
 	glBegin(GL_QUADS);
 	glNormal3f(-6, -1.1, -6);
 	glVertex3f(-6, -1.1, -6);
@@ -102,6 +106,10 @@ void display(void)
 	glVertex3f(6, -1.1, 6);
 	glVertex3f(6, -1.1, -6);
 	glEnd();
+
+	glPopMatrix(); /// main pop
+
+
 
 	glutSwapBuffers();
 }
